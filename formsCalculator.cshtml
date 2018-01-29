@@ -1,12 +1,10 @@
 @{ 
 
-	if(IsPost)
-	{
-		var operator = '+';
-		var result = numOne.AsInt() + numTwo.AsInt();
-		var resultMessage = "Answer: " + result;
+	if (IsPost) {
 		var numOne = Request["first-number"];
 		var numTwo = Request["second-number"];
+		var result = numOne.AsInt() + numTwo.AsInt();
+		var resultMessage = "Answer: " + result;
 	}
 }
 

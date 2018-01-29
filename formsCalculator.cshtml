@@ -3,12 +3,12 @@
 		<title>Forms Calculator</title>
 	</head>
 	<body>
-@{ 
+	@{ 
 	var debug = "nothing's happened yet";
 	var op="";
 	var numOne="";
 	var numTwo="";
-	int result=0;
+	var result=0;
 	if (IsPost) {
 		op = Request["operator"];
 		
@@ -16,7 +16,7 @@
 		numTwo = Request["second-number"];
 		
 		result = numOne.AsInt() + numTwo.AsInt();
-		<p>Answer: @result<p/>
+		
 		
 		debug = "you have posted";
 	}
@@ -40,6 +40,8 @@
 			<input type="Submit" name="Submit" value="Submit"/>
 			<div>@resultMessage</div>
 			<div>@debug</div>
+			
+			<p>Answer: @result<p/>
 		</form>
 	}
 	</body>

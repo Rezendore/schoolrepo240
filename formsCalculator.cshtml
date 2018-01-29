@@ -1,49 +1,65 @@
-<html lang='en'>
-	<head>
-		<title>Forms Calculator</title>
-	</head>
-	<body>
-	@{ 
+@{ 
 	var debug = "nothing's happened yet";
 	var op="";
 	var numOne="";
 	var numTwo="";
 	var result=0;
+	var resultMessage="";
 	if (IsPost) {
 		op = Request["operator"];
 		
 		numOne = Request["first-number"];
 		numTwo = Request["second-number"];
 		
-		result = numOne.AsInt() + numTwo.AsInt();
-		
+		switch(op)
+		{
+			case "+":
+				result = numOne.AsInt() + numTwo.AsInt();
+				break;
+			case "-":
+				result = numOne.AsInt() - numTwo.AsInt();
+				break;
+			case "/":
+				result = numOne.AsInt() / numTwo.AsInt();
+				break;
+			case "*":
+				result = numOne.AsInt() * numTwo.AsInt();
+				break;
+			default:
+				break;
+		}
+		resultMessage = "Answer = " + result;
 		
 		debug = "you have posted";
 	}
+}
 
-	
+<html lang='en'>
+<head>
+	<title>Forms Calculator</title>
+</head>
+<body>
 	<form method="POST" action="">
 		<div class='form-row'>
-		  <label for='first-number'>Number One</label>
-		  <input id='first-number' name='first-number' type='text'/>
+			<label for='first-number'>Number One</label>
+			<input id='first-number' name='first-number' type='text'/>
 		</div>
 		<div class='form-row'>
-		  <label for='operator'>Operator</label>
-		  <input id='operator' name='operator' type='text' placeholder='+ - * / %'/>
+			<label for='second-number'>Number Two</label>
+			<input id='second-number' name='second-number' type='text'/>  
 		</div>
-		<div class='form-row'>
-		  <label for='second-number'>Number Two</label>
-		  <input id='second-number' name='second-number' type='text'/>
-		</div>
+		<fieldset class='legacy-form-row'>
+			<legend>Operation</legend>
+			<input id='+operation' name='operation' type='radio' value='Addition'/>
+			<label for='+operation' class='radio-label'>Addition</label>
+			<input id='-operation' name='operation' type='radio' value='Subtraction'/>
+			<label for='-operation' class='radio-label'>Subtraction</label>
+		</fieldset>
 		
+		<input type="Submit" name="Submit" value="Submit"/>
+		<div>@debug</div>
+	</form>
 		
-			<input type="Submit" name="Submit" value="Submit"/>
-			<div>@debug</div>
-			
-		</form>
-		<div>
-			<p>@result<p/>
-			</div>
-	}
+		<div>@result</div>
 	</body>
 </html>

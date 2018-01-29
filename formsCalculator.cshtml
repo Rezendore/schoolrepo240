@@ -1,10 +1,10 @@
 @{ 
-	var resultMessage = "all cool here";
+	var resultMessage="", op="",numOne="",numTwo=""result="",resultMessage="";
 	if (IsPost) {
-		var op = Request["operator"];
-		var numOne = Request["first-number"];
-		var numTwo = Request["second-number"];
-		var result = numOne.AsInt() + numTwo.AsInt();
+		p = Request["operator"];
+		numOne = Request["first-number"];
+		numTwo = Request["second-number"];
+		result = numOne.AsInt() + numTwo.AsInt();
 		resultMessage = "Answer: " + result;
 	}
 }

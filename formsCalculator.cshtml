@@ -1,7 +1,7 @@
 @{ 
 	var resultMessage = "all cool here";
 	if (IsPost) {
-		var operator = Request["operator"];
+		var op = Request["operator"];
 		var numOne = Request["first-number"];
 		var numTwo = Request["second-number"];
 		var result = numOne.AsInt() + numTwo.AsInt();

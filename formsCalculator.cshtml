@@ -1,17 +1,14 @@
 @{ 
-	var numOne = Request["first-number"];
+	var numOne = Request["first-number"], numTwo = Request["second-number"];
 }
 @{
-	numTwo = Request["second-number"];
+	var operator = '+';
 }
 @{
-	operator = '+';
+	var result = numOne.AsInt() + numTwo.AsInt();
 }
 @{
-	result = numOne.AsInt() + numTwo.AsInt();
-}
-@{
-	resultMessage = "Answer: " + result;
+	var resultMessage = "Answer: " + result;
 }
 
 <!DOCTYPE html>

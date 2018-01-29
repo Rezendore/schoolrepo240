@@ -1,0 +1,42 @@
+@{ 
+	var numOne = Request["first-number"];
+}
+@{
+	numTwo = Request["second-number"];
+}
+@{
+	operator = '+';
+}
+@{
+	result = numOne.AsInt() + numTwo.AsInt();
+}
+@{
+	resultMessage = "Answer: " + result;
+}
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<title>Forms Calculator</title>
+	</head>
+	<body>
+		
+		<div class='form-row'>
+		  <label for='first-number'>Number One</label>
+		  <input id='first-number' name='first-number' type='text'/>
+		</div>
+		<div class='form-row'>
+		  <label for='operator'>Operator</label>
+		  <input id='operator' name='operator' type='text' placeholder='+ - * / %'/>
+		</div>
+		<div class='form-row'>
+		  <label for='second-number'>Number Two</label>
+		  <input id='second-number' name='second-number' type='text'/>
+		</div>
+		
+		<form method="POST" action="">
+			<input type="Submit" name="Submit" value="Submit"/>
+			<div>@resultMessage</div>
+		</form>
+	</body>
+</html>

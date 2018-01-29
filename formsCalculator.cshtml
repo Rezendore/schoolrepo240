@@ -4,13 +4,16 @@
 	var op="";
 	var numOne="";
 	var numTwo="";
-	var result=0;
+	int result=0;
 	if (IsPost) {
 		op = Request["operator"];
+		
 		numOne = Request["first-number"];
 		numTwo = Request["second-number"];
+		
 		result = numOne.AsInt() + numTwo.AsInt();
 		resultMessage = "Answer: " + result;
+		
 		debug = "you have posted";
 	}
 }

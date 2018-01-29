@@ -1,17 +1,14 @@
 @{ 
-	if(IsPost) {
-	var numOne = Request["first-number"]
-	var numTwo = Request["second-number"];
-	}
-}
-@{
 	var operator = '+';
-}
-@{
 	var result = numOne.AsInt() + numTwo.AsInt();
-}
-@{
 	var resultMessage = "Answer: " + result;
+	var numOne = "";
+	var numTwo = "";
+	if(IsPost)
+	{
+	numOne = Request["first-number"];
+	numTwo = Request["second-number"];
+	}
 }
 
 <!DOCTYPE html>

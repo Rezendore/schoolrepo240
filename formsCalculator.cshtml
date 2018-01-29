@@ -6,7 +6,7 @@
 	var result=0;
 	var resultMessage="";
 	if (IsPost) {
-		op = Request["+operator"];
+		op = Request["operator"];
 		
 		numOne = Request["first-number"];
 		numTwo = Request["second-number"];
@@ -30,7 +30,7 @@
 		}
 		resultMessage = "Answer = " + result;
 		
-		debug = Request["+operator"];
+		debug = Request["+operation"];
 	}
 }
 
@@ -48,7 +48,7 @@
 			<label for='second-number'>Number Two</label>
 			<input id='second-number' name='second-number' type='text'/>  
 		</div>
-		<fieldset class='legacy-form-row'>
+		<fieldset id="operator" class='legacy-form-row'>
 			<legend>Operation</legend>
 			<input id='+operation' name='operation' type='radio' value='Addition'/>
 			<label for='+operation' class='radio-label'>Addition</label>
@@ -57,7 +57,7 @@
 		</fieldset>
 		
 		<input type="Submit" name="Submit" value="Submit"/>
-		<div>@debug</div>
+		<div>debug " @debug "</div>
 	</form>
 		
 		<div>@result</div>

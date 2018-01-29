@@ -48,12 +48,16 @@
 			<label for='second-number'>Number Two</label>
 			<input id='second-number' name='second-number' type='text'/>  
 		</div>
-		<fieldset id="operator" class='legacy-form-row'>
+		<fieldset class='legacy-form-row'>
 			<legend>Operation</legend>
-			<input id='+operation' name='operation' type='radio' value='Addition'/>
+			<input id='+operation' name='operation' type='radio' value='+'/>
 			<label for='+operation' class='radio-label'>Addition</label>
-			<input id='-operation' name='operation' type='radio' value='Subtraction'/>
+			<input id='-operation' name='operation' type='radio' value='-'/>
 			<label for='-operation' class='radio-label'>Subtraction</label>
+			<input id='/operation' name='operation' type='radio' value='/'/>
+			<label for='/operation' class='radio-label'>Division</label>
+			<input id='*operation' name='operation' type='radio' value='*'/>
+			<label for='*operation' class='radio-label'>Multiplication</label>
 		</fieldset>
 		
 		<input type="Submit" name="Submit" value="Submit"/>

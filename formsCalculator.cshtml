@@ -6,7 +6,7 @@
 	var result=0;
 	var resultMessage="";
 	if (IsPost) {
-		op = Request["operator"];
+		op = Request["+operator"];
 		
 		numOne = Request["first-number"];
 		numTwo = Request["second-number"];
@@ -30,7 +30,7 @@
 		}
 		resultMessage = "Answer = " + result;
 		
-		debug = "you have posted";
+		debug = Request["-operator"];
 	}
 }
 

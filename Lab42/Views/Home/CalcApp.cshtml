@@ -1,0 +1,37 @@
+﻿@model string
+@{
+
+}
+
+<html lang='en'>
+<head>
+    <title>Forms Calculator</title>
+</head>
+<body>
+    <form method="POST" action="">
+        <div class='form-row'>
+            <label for='first-number'>Number One</label>
+            <input id='first-number' name='first-number' type='text' />
+        </div>
+        <div class='form-row'>
+            <label for='second-number'>Number Two</label>
+            <input id='second-number' name='second-number' type='text' />
+        </div>
+        <fieldset class='legacy-form-row'>
+            <legend>Operation</legend>
+            <input id='+operation' name='operation' type='radio' value='+' />
+            <label for='+operation' class='radio-label'>Addition</label>
+            <input id='-operation' name='operation' type='radio' value='-' />
+            <label for='-operation' class='radio-label'>Subtraction</label>
+            <input id='/operation' name='operation' type='radio' value='/' />
+            <label for='/operation' class='radio-label'>Division</label>
+            <input id='*operation' name='operation' type='radio' value='*' />
+            <label for='*operation' class='radio-label'>Multiplication</label>
+        </fieldset>
+
+        <input type="Submit" name="Submit" value="Submit" />
+    </form>
+
+    <div>@ViewBag.Answer</div>
+</body>
+</html>
